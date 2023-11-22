@@ -1,0 +1,11 @@
+env
+*.pyc
+data/
+lm_cache
+.idea
+__pycache__/
+*.py[cod]
+__pycache__ copy/
+wandb/
+docs/
+search_result/
