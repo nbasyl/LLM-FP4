@@ -90,13 +90,24 @@ Below is the results in LLaMA-7B and LLaMA-13B with six commonsense reasoning da
 If you use LLM-FP4 in your publication, please cite it by using the following BibTeX entry.
 
 ```bibtex
-@misc{liu2023llmfp4,
-      title={LLM-FP4: 4-Bit Floating-Point Quantized Transformers}, 
-      author={Shih-yang Liu and Zechun Liu and Xijie Huang and Pingcheng Dong and Kwang-Ting Cheng},
-      year={2023},
-      eprint={2310.16836},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+@inproceedings{liu-etal-2023-llm,
+    title = "{LLM}-{FP}4: 4-Bit Floating-Point Quantized Transformers",
+    author = "Liu, Shih-yang  and
+      Liu, Zechun  and
+      Huang, Xijie  and
+      Dong, Pingcheng  and
+      Cheng, Kwang-Ting",
+    editor = "Bouamor, Houda  and
+      Pino, Juan  and
+      Bali, Kalika",
+    booktitle = "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    month = dec,
+    year = "2023",
+    address = "Singapore",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.emnlp-main.39",
+    pages = "592--605",
+    abstract = "We propose LLM-FP4 for quantizing both weights and activations in large language models (LLMs) down to 4-bit floating-point values, in a post-training manner. Existing post-training quantization (PTQ) solutions are primarily integer-based and struggle with bit widths below 8 bits. Compared to integer quantization, floating-point (FP) quantization is more flexible and can better handle long-tail or bell-shaped distributions, and it has emerged as a default choice in many hardware platforms. One characteristic of FP quantization is that its performance largely depends on the choice of exponent bits and clipping range. In this regard, we construct a strong FP-PTQ baseline by searching for the optimal quantization parameters. Furthermore, we observe a high inter-channel variance and low intra-channel variance pattern in activation distributions, which adds activation quantization difficulty. We recognize this pattern to be consistent across a spectrum of transformer models designed for diverse tasks such as LLMs, BERT, and Vision Transformer models. To tackle this, we propose per-channel activation quantization and show that these additional scaling factors can be reparameterized as exponential biases of weights, incurring a negligible cost. Our method, for the first time, can quantize both weights and activations in the LLaMA-13B to only 4-bit and achieves an average score of 63.1 on the common sense zero-shot reasoning tasks, which is only 5.8 lower than the full-precision model, significantly outperforming the previous state-of-the-art by 12.7 points. Code is available at: https://github.com/nbasyl/LLM-FP4.",
 }
 ```
 
